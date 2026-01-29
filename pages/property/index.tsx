@@ -1,6 +1,9 @@
 import WithLayoutBasic from "@/libs/components/layout/LayoutBasic";
 import { Container, Stack } from "@mui/material";
 import { NextPage } from "next";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const PropertyList: NextPage = () => {
     console.log("PROPERTYLIST COMPONENT - PAGES ROUTER");

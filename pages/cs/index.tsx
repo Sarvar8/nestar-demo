@@ -3,6 +3,9 @@ import withLayoutBasic from "@/libs/components/layout/LayoutBasic";
 import { Stack } from "@mui/material";
 import { NextPage } from "next";
 import { useState } from "react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const CS: NextPage = () => {
   return (
