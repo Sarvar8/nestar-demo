@@ -1,19 +1,21 @@
-import WithLayoutBasic from "@/libs/components/layout/LayoutBasic";
+import withLayoutBasic from "@/libs/components/layout/LayoutBasic";
+import useDeviceDetect from "@/libs/hooks/useDeviceDetect";
 import { Stack } from "@mui/material";
 import { NextPage } from "next";
 import { useState } from "react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
 
 const Community: NextPage = () => {
-    console.log("COMMUNITY COMPONENT - PAGES ROUTER");
-    const [title, setTitle] = useState<string>("hello");
-    return (
-        <div style={{ margin: "20px 0" }}>
-            <Stack className="container">COMMUNITY</Stack>
-        </div>
-    );
+    const device = useDeviceDetect();
+
+    if (device === "mobile") {
+        return <Stack>COMMUNITY MOBILE</Stack>;
+    } else {
+        return (
+            <div style={{ margin: "20px 0" }}>
+                <Stack className="container">COMMUNITY</Stack>
+            </div>
+        );
+    }
 };
 
-export default WithLayoutBasic(Community);
+export default withLayoutBasic(Community);

@@ -1,20 +1,20 @@
 import withLayoutBasic from "@/libs/components/layout/LayoutBasic";
-
+import useDeviceDetect from "@/libs/hooks/useDeviceDetect";
 import { Stack } from "@mui/material";
 import { NextPage } from "next";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
 
 const AgentList: NextPage = () => {
+  const device = useDeviceDetect();
 
-
-  return (
-    <div style={{ margin: "20px 0" }}>
-      <Stack className="container">AGENTS LIST</Stack>
-    </div>
-  );
-
+  if (device === "mobile") {
+    return <Stack>AGENTS LIST MOBILE</Stack>;
+  } else {
+    return (
+      <div style={{ margin: "20px 0" }}>
+        <Stack className="container">AGENTS LIST</Stack>
+      </div>
+    );
+  }
 };
 
 export default withLayoutBasic(AgentList);
